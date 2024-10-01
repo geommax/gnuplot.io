@@ -1,0 +1,17 @@
+#!/usr/bin/gnuplot -persist
+set term x11
+set title "CPU Usage (%)"
+set yrange [1:100] 
+set ylabel "Usage (%)"
+set xdata time
+set timefmt "%S"
+set format x "%S"
+set grid
+while (1) {
+            plot "cpu_usage.dat" using 1:2 title 'CPU Usage' with lines lc rgb 'red'
+            pause 0.4
+            replot
+        }
+
+
+
